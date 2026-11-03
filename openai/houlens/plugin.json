@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "houlens",
+  "version": "0.1.0",
+  "description": "Search Japanese case law and statutes in Houlens and answer with the court, date, and case number of each cited decision.",
+  "author": {
+    "name": "Normantics Inc.",
+    "url": "https://normantics.co.jp"
+  },
+  "homepage": "https://houlens.jp",
+  "repository": "https://github.com/normantics/houlens-plugins",
+  "license": "MIT",
+  "keywords": ["legal", "case-law", "statutes", "japan"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Houlens",
+        "shortDescription": "Japanese case law and statutes",
+        "longDescription": "Houlens searches Japanese court decisions and statutes and returns the source text with its citation. Search decisions by meaning or by keyword, filter by court level and date of decision, read the parts of a decision you need, find where a phrase appears in a decision, and check whether a cited case number exists. Look up statutes by name or abbreviation, read the version in force on a given date, and compare an article before and after an amendment. Each decision comes with the court, date of decision, case number, and Houlens case ID. The decision text is extracted from the original PDF by machine, so check the original PDF on Houlens before quoting it in a filing. Houlens returns search results and source text only and does not give legal advice. Use requires a Houlens account with an active Houlens contract.",
+        "developerName": "Normantics Inc.",
+        "category": "Productivity",
+        "capabilities": ["Search case law", "Read decisions", "Verify case citations", "Look up statutes", "Compare statute revisions"],
+        "websiteURL": "https://houlens.jp",
+        "supportURL": "https://normantics.co.jp/#contact",
+        "privacyPolicyURL": "https://houlens.jp/privacy",
+        "termsOfServiceURL": "https://houlens.jp/terms",
+        "defaultPrompt": [
+          "業務委託の途中解約の損害賠償について判例を探して",
+          "労基法20条の解雇予告の条文を見せて",
+          "準備書面に引用された事件番号が実在するか確かめて"
+        ]
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "Houlens does not sell products or process payments in ChatGPT. Users sign in to an existing Houlens account."
+      },
+      "publication": {
+        "countries": ["JP"],
+        "translations": {
+          "ja-JP": {
+            "subtitle": "日本の判例と条文を検索",
+            "description": "法レンズは、日本の判例と条文を検索し、原文と出典を返します。判例は意味の近さか語の一致で探せ、裁判所の種別と言渡日で絞れます。判決文の必要な部分だけを読み、文言の位置を探し、引用された事件番号が実在するかを照合できます。条文は法令名か略称で引け、基準日の時点の版と、改正の前後の比較を示します。判例には裁判所・言渡日・事件番号と法レンズの判例IDが付きます。判決文のテキストは原本PDFから機械的に抽出したものなので、書面に引用する前に法レンズで原本PDFを確認してください。法レンズは検索の結果と原文だけを返し、法的な助言はしません。利用には法レンズのアカウントと有効な契約が要ります。"
+          }
+        }
+      }
+    }
+  }
+}

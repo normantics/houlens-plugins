@@ -1,0 +1,23 @@
+{
+  "name": "houlens",
+  "displayName": "Houlens",
+  "version": "0.1.0",
+  "description": "Search Japanese case law and statutes in Houlens, read the decision text, and answer with the court, date, and case number of each cited decision. 法レンズで日本の判例と条文を調べ、出典を添えて回答します。",
+  "author": {
+    "name": "Normantics Inc.",
+    "url": "https://normantics.co.jp"
+  },
+  "homepage": "https://houlens.jp",
+  "repository": "https://github.com/normantics/houlens-plugins",
+  "license": "MIT",
+  "keywords": ["legal", "case-law", "statutes", "japan", "mcp"],
+  "documentationUrl": "https://houlens.jp/connect",
+  "privacyPolicyUrl": "https://houlens.jp/privacy",
+  "termsOfServiceUrl": "https://houlens.jp/terms",
+  "mcpServers": {
+    "houlens": {
+      "type": "http",
+      "url": "https://houlens.jp/api/mcp"
+    }
+  }
+}
