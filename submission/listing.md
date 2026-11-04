@@ -138,7 +138,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 申請の前に足すもの:
 
 - `assets/` に icon のファイルを置き、`extensions.com.openai.interface` の `logo` と `composerIcon` に指定する
-- 下のテストケースを確定したら、`extensions.com.openai.review.test_cases` へ移す。動画を録ったら、そのURLを `review.demo_recording_url` に入れる
+- テストケースは `openai/houlens/plugin.json` の `extensions.com.openai.review.test_cases` に、動画のURL https://youtu.be/3cIDEeTAasE は `review.demo_recording_url` に入れた。動画は株式会社NormanticsのYouTubeのチャンネルに限定公開で置き、ChatGPTのデスクトップアプリで8件を順に流したようすを映している
 - 審査の担当者の資格情報は、パッケージに入れず、ダッシュボードの Review details に入れる
 
 ### 掲載の項目 (`openai/houlens/plugin.json` に入れた値)
@@ -164,7 +164,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 1. 相談の文章のままで判例を探す
    - description: Find decisions by meaning from a consultation written in Japanese
    - prompt: フリーランスへの業務委託を途中で打ち切ったときの損害賠償について、関連する判例を探して、出典を示して
-   - tools_triggered: search, fetch
+   - tools_triggered: search_cases
    - expected_behavior: Returns related decisions, each with the court, date of decision, case number, and Houlens case ID, quotes short passages from the decision text, and notes that the text is machine-extracted from the original PDF.
 2. 書面に引用された判例を照合する
    - description: Verify a cited decision by case number and read the relevant passage
@@ -174,7 +174,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 3. 略称で条文を引く
    - description: Look up a statute article by its abbreviation
    - prompt: 労基法20条の解雇予告の条文を見せて
-   - tools_triggered: resolve_law_name, get_statute
+   - tools_triggered: get_statute
    - expected_behavior: Resolves the abbreviation to the Labor Standards Act, returns the text of Article 20 with paragraph numbers, and shows the date up to which Houlens has imported amendments.
 4. 改正の前後で条文を比べる
    - description: Compare a statute article before and after an amendment
