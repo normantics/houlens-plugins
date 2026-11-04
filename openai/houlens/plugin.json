@@ -21,7 +21,7 @@
         "category": "Productivity",
         "capabilities": ["Search case law", "Read decisions", "Verify case citations", "Look up statutes", "Compare statute revisions"],
         "websiteURL": "https://houlens.jp",
-        "supportURL": "https://normantics.co.jp/#contact",
+        "supportURL": "https://houlens.jp/company/contact",
         "privacyPolicyURL": "https://houlens.jp/privacy",
         "termsOfServiceURL": "https://houlens.jp/terms",
         "defaultPrompt": [
