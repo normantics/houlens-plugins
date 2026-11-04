@@ -1,7 +1,7 @@
 {
   "name": "houlens",
   "displayName": "法レンズ",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AIエージェントの検索と読解に最適化した、日本の判例と条文の検索サービス「法レンズ」にClaudeをつなぎます。Claudeが手掛かりをもとに自分で調査を組み立て、あなたは回答の根拠を原文で確かめられます。",
   "author": {
     "name": "Normantics Inc.",
