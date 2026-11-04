@@ -10,8 +10,16 @@
   "homepage": "https://houlens.jp",
   "repository": "https://github.com/normantics/houlens-plugins",
   "license": "MIT",
-  "keywords": ["legal", "case-law", "statutes", "japan", "mcp"],
+  "keywords": [
+    "legal",
+    "case-law",
+    "statutes",
+    "japan",
+    "mcp"
+  ],
+  "icon": "./logo.png",
   "documentationUrl": "https://houlens.jp/connect",
+  "supportUrl": "https://houlens.jp/company/contact",
   "privacyPolicyUrl": "https://houlens.jp/privacy",
   "termsOfServiceUrl": "https://houlens.jp/terms",
   "mcpServers": {

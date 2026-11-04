@@ -135,9 +135,8 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 
 パッケージは `openai/houlens/` で、フォルダの中身を根にしたZIPを作って上げます。マニフェストは根の `plugin.json` (Agent Plugins の形式) で、MCPサーバの設定は `mcp.json` にあります。MCPサーバはOpenAI向けのエンドポイント https://houlens.jp/api/mcp/openai を指し、認証はOAuthでCIMDを優先します。
 
-申請の前に足すもの:
+アイコンは `assets/logo.png` (法レンズのリポジトリの `public/logo.png` と同じ、640×640pxのPNG) に置き、`extensions.com.openai.interface` の `logo` と `composerIcon` に指定した。Claude向けのプラグインも、同じ画像を `claude/houlens/logo.png` に置き、`plugin.json` の `icon` に指定した。
 
-- `assets/` に icon のファイルを置き、`extensions.com.openai.interface` の `logo` と `composerIcon` に指定する
 - テストケースは `openai/houlens/plugin.json` の `extensions.com.openai.review.test_cases` に、動画のURL https://youtu.be/3cIDEeTAasE は `review.demo_recording_url` に入れた。動画は株式会社NormanticsのYouTubeのチャンネルに限定公開で置き、ChatGPTのデスクトップアプリで8件を順に流したようすを映している
 - 審査の担当者の資格情報は、パッケージに入れず、ダッシュボードの Review details に入れる
 
