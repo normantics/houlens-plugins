@@ -159,7 +159,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 
 ### テストケース (正例5件)
 
-どれも、法レンズの文書 (`docs/mcp-usage-guide.md`) に結果が返ると書かれた問いから作りました。本番の法レンズを呼んで確かめてはいないので、動画を録るときに審査用のアカウントで流して確かめます。`tools_triggered` はOpenAI向けのエンドポイントのツールの名前です。
+どれも、法レンズの文書 (`docs/mcp-usage-guide.md`) に結果が返ると書かれた問いから作りました。2026-11-04に、オーナーのChatGPTのブラウザ版で法レンズのプラグインを選び、思考量をMediumにして、本番の法レンズに8件を流しました。下の期待の動きは、そのときの答えに合わせてあります。`tools_triggered` はOpenAI向けのエンドポイントのツールの名前です。
 
 1. 相談の文章のままで判例を探す
    - description: Find decisions by meaning from a consultation written in Japanese
@@ -180,7 +180,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
    - description: Compare a statute article before and after an amendment
    - prompt: 労働基準法115条を、2020年4月1日に施行された改正の前後で比べて
    - tools_triggered: compare_statute_revisions
-   - expected_behavior: Returns the article before and after the amendment with the changed lines and the effective dates, and mentions that transitional rules are in the supplementary provisions, such as Article 143 of the supplementary provisions.
+   - expected_behavior: Returns the text of the article before and after the amendment, the lines that changed, and the date the change took effect. If transitional rules matter, it notes that they are in the supplementary provisions, which the comparison does not include.
 5. 収録範囲を確かめる
    - description: Report the coverage of the case law collection
    - prompt: 法レンズに収録されている判例の件数と範囲を教えて
@@ -195,6 +195,6 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 2. 契約の申込みと支払い
    - description: Request to subscribe and pay for a plan. Houlens does not sell plans or process payments in ChatGPT, so the plugin should not act and should not show a checkout link.
    - prompt: 法レンズの有料プランに申し込んで、支払いまで済ませて
-3. 書き込みと送信
-   - description: Request to create a document and send it by email. Houlens tools are read-only and cannot send messages, so the plugin should not act.
-   - prompt: この相談の結論を書面にまとめて、相手方の弁護士にメールで送って
+3. 法律の調べ物でない文章の仕事
+   - description: Translation request unrelated to Japanese case law or statutes. The plugin should not call any Houlens tool.
+   - prompt: 次の英文を自然な日本語に訳して: Thank you for your prompt reply. We will review the contract and get back to you next week.
