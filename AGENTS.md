@@ -6,7 +6,6 @@
 
 - `claude/houlens/`: Claude向けのプラグイン。MCPサーバの設定は `https://houlens.jp/api/mcp` の1つだけにする。
 - `openai/houlens/`: ChatGPTとCodex向けのプラグイン。MCPサーバの設定は `https://houlens.jp/api/mcp/openai` の1つだけにする。
-- `submission/`: 申請の画面に入れる文の下書き。リポジトリを公開にする前に消す。
 
 ## 守ること
 
