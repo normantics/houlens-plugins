@@ -12,7 +12,7 @@ AnthropicとOpenAIのディレクトリへ法レンズを申請するときに�
 | terms of service URL | https://houlens.jp/terms |
 | website URL | https://houlens.jp |
 | support contact | info@normantics.co.jp |
-| support URL (OpenAIだけが求める) | https://normantics.co.jp/#contact (株式会社Normanticsの会社サイトのお問い合わせの節) |
+| support URL (OpenAIだけが求める) | https://houlens.jp/company/contact (株式会社Normanticsの会社サイトのお問い合わせの節 https://normantics.co.jp/#contact へ転送する。会社サイトの置き場が変わっても転送の先を直せば済む) |
 | icon | 法レンズのリポジトリの `public/logo.png` (PNG、640×640px、19,677バイト)。同じ図柄のSVGが `public/logo.svg` にある |
 
 iconは、AnthropicのプラグインとOpenAIのパッケージの両方で、プラグインのフォルダの中にファイルとして置く必要があります。Anthropicの `claude plugin validate` は、512〜2048pxの正方形のPNGかJPEGを求め、SVGとWebPを受け付けません。最初にポータルで保存か申請をした時点のiconが掲載のiconになり、後から変えられません。`public/logo.png` はこの条件に合います。OpenAIは、正方形で48px以上のPNG、JPEG、WebP、SVGを `logo` に求めます。
@@ -55,10 +55,10 @@ iconは、AnthropicのプラグインとOpenAIのパッケージの両方で、�
 
 ### カテゴリの案
 
-AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータルにしか無く、公式の文書から確かめられませんでした。ポータルで一覧を見てから決めます。
+AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータルにしか無く、公式の文書から確かめられませんでした。決め方は、一覧にLegalがあればLegal、無ければResearchです (決定 2026-11-04)。申請の日にポータルの一覧を見て選びます。
 
 - Anthropic (1〜5個): 一覧に Legal があればそれを先に、次に Research の類
-- OpenAI (1個): 一覧に Legal か Research があればそれ。無ければ Productivity。`openai/houlens/plugin.json` には仮に Productivity を入れてある
+- OpenAI (1個): 一覧に Legal があればそれ、無ければ Research。`openai/houlens/plugin.json` の Productivity は仮の値で、申請の日に一覧を見て書き換える
 
 ## Anthropicのコネクタの申請 (MCP connector)
 
@@ -125,7 +125,7 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 | 個人のデータを読むか、保存するか | プラグインは読まず、保存しない。宣言したMCPサーバの法レンズは、ログインと権限の確認のために利用者の識別子、メールアドレス、表示名を扱い、AI接続の記録 (接続先の名前、接続日時、最終利用日時など) を保存する。検索の入力は保存せず、ログにも出さない | プライバシーポリシー2章、3章 |
 | 宣言したコネクタの外へデータを送るか | プラグインは送らない。法レンズのサーバは、意味検索のために検索の文をGoogleのGemini APIへ送る。ログインにはFirebase、配信とデータの管理にはGoogle Cloudを使う | プライバシーポリシー4章 |
 | データの保持の期間 | プラグインは保持しない。法レンズのサーバでは、AI接続は最後に使ってから30日を過ぎると使えなくなり、期限を過ぎた認証の記録は猶予の後に自動で削除する。Gemini APIは、利用ポリシー違反の検出のために入力と応答を55日保持する。アカウント情報と運用の記録は、利用目的と法令上の保存義務に応じて管理し、期間の定めは書いていない。退会すると、認証の記録、利用者情報、AI接続の記録を削除する | プライバシーポリシー4章、6章 |
-| 18歳未満を対象にするか | 対象にしない (案) | プライバシーポリシーに記述が無い。利用規約か本人の決定で確かめてから答える |
+| 18歳未満を対象にするか | 対象にしない | 利用規約の利用資格に「本サービスは、18歳以上の方を対象とします。」とある (https://houlens.jp/terms) |
 
 ### Compliance
 
@@ -149,12 +149,12 @@ AnthropicとOpenAIのどちらも、選べるカテゴリの一覧はポータ�
 | shortDescription | Japanese case law and statutes | 30字 (この値はちょうど30字) |
 | longDescription | 英語の説明。`plugin.json` を参照 | 4,000字 |
 | developerName | Normantics Inc. | 80字。表示の名前は身元の確認を済ませた名義から自動で決まる |
-| category | Productivity (仮) | ダッシュボードの一覧から選ぶ |
+| category | Legal、無ければ Research (決定 2026-11-04) | 申請の日にダッシュボードの一覧を見て選ぶ。plugin.json の Productivity は仮の値 |
 | websiteURL | https://houlens.jp | |
-| supportURL | https://normantics.co.jp/#contact | |
+| supportURL | https://houlens.jp/company/contact | 会社サイトのお問い合わせの節へ転送する |
 | privacyPolicyURL | https://houlens.jp/privacy | |
 | termsOfServiceURL | https://houlens.jp/terms | |
-| publication.countries | JP (案) | 省くと全ての国 |
+| publication.countries | JP (決定 2026-11-04) | 省くと全ての国。法レンズは日本の判例と条文を、日本語の画面と規約で扱う |
 | 日本語の訳 | ja-JP の subtitle と description | subtitle は30字 |
 
 ### テストケース (正例5件)
