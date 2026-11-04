@@ -23,6 +23,8 @@
         "shortDescription": "Japanese case law and statutes",
         "longDescription": "Houlens searches Japanese court decisions and statutes and returns the source text with its citation. Search decisions by meaning or by keyword, filter by court level and date of decision, read the parts of a decision you need, find where a phrase appears in a decision, and check whether a cited case number exists. Look up statutes by name or abbreviation, read the version in force on a given date, and compare an article before and after an amendment. Each decision comes with the court, date of decision, case number, and Houlens case ID. The decision text is extracted from the original PDF by machine, so check the original PDF on Houlens before quoting it in a filing. Houlens returns search results and source text only and does not give legal advice. Use requires a Houlens account with an active Houlens contract.",
         "developerName": "Normantics Inc.",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png",
         "category": "Productivity",
         "capabilities": [
           "Search case law",
