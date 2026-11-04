@@ -1,8 +1,8 @@
 {
   "name": "houlens",
-  "displayName": "Houlens",
+  "displayName": "法レンズ",
   "version": "0.1.0",
-  "description": "Search Japanese case law and statutes in Houlens, read the decision text, and answer with the court, date, and case number of each cited decision. 法レンズで日本の判例と条文を調べ、出典を添えて回答します。",
+  "description": "AIエージェントの検索と読解に最適化した、日本の判例と条文の検索サービス「法レンズ」にClaudeをつなぎます。Claudeが手掛かりをもとに自分で調査を組み立て、あなたは回答の根拠を原文で確かめられます。",
   "author": {
     "name": "Normantics Inc.",
     "url": "https://normantics.co.jp"
