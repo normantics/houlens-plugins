@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "houlens",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Search Japanese case law and statutes in Houlens and answer with the court, date, and case number of each cited decision.",
   "author": {
     "name": "Normantics Inc.",
@@ -19,19 +19,19 @@
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "Houlens",
-        "shortDescription": "Japanese case law and statutes",
-        "longDescription": "Houlens is a search service for Japanese case law and statutes, built for the search and reading done by AI agents. Along with each result, it returns cues for what to look at next, so ChatGPT can choose its next search or the next part of a decision to read and build the research step by step. You can check the grounds of each answer in the source text. Search decisions by meaning or by keyword, filter by court level and date of decision, read the parts of a decision you need, find where a phrase appears in a decision, and check whether a cited case number exists. Look up statutes by name or abbreviation, read the version in force on a given date, and compare an article before and after an amendment. Each decision comes with the court, date of decision, case number, and Houlens case ID. The decision text is extracted from the original PDF by machine, so check the original PDF on Houlens before quoting it in a filing. Houlens provides research material and does not give legal advice. Use requires a Houlens account with an active Houlens contract.",
+        "displayName": "法レンズ",
+        "shortDescription": "AIエージェントに最適化した判例・条文検索",
+        "longDescription": "法レンズは、AIエージェントの検索と読解に最適化した、日本の判例と条文の検索サービスです。AIエージェントとは、ChatGPTのように、調べものや作業を任せられるAIのことです。あなたが疑問や事情をChatGPTに伝えると、ChatGPTが法レンズで資料を探し、本文を読んで回答をまとめます。あなたは、回答の根拠を原文で確かめられます。\n\n弁護士などの専門家だけでなく、契約や働き方など、仕事やくらしの問題を調べたい方にもお使いいただけます。\n\n法レンズは、資料と一緒に、次に何を調べるとよいかの手掛かりも返します。そのためChatGPTは、届いた資料を読みながら、次の検索や読む箇所を自分で選び、調査を組み立てていけます。たとえば、最初の問いでぴったりの判例が見つからなくても、候補の抜粋や問いとの近さをもとに、言葉を変えて探し直せます。長い判決では、裁判所の判断の部分や前後の文章を読み、判決が引用している別の判例も事件番号でたどれます。\n\nChatGPTは、条文を法律の名前や略称で引けます。判決が出た日のように日付を指定すると、その時点の条文が届きます。法律の改正の前後で、どこが変わったかも比べられます。\n\n判例には、裁判所、判決の日、事件番号が付きます。判決文は、原本のPDFから文字を取り出したものです。書面に引用するときは、法レンズにログインして原本のPDFで確かめてください。検索で見つからなくても、その判例が存在しないとは限りません。\n\n法レンズは、調べるための資料を届けるサービスで、法律相談や個別の判断はしません。ご利用には、法レンズのアカウントとご契約が必要です。\n\nHoulens is a search service for Japanese case law and statutes, built for the search and reading done by AI agents. Along with each result, it returns cues for what to look at next, so ChatGPT can choose its next search or the next part of a decision to read and build the research step by step. You can check the grounds of each answer in the source text. Search decisions by meaning or by keyword, filter by court level and date of decision, read the parts of a decision you need, find where a phrase appears in a decision, and check whether a cited case number exists. Look up statutes by name or abbreviation, read the version in force on a given date, and compare an article before and after an amendment. Each decision comes with the court, date of decision, case number, and Houlens case ID. The decision text is extracted from the original PDF by machine, so check the original PDF on Houlens before quoting it in a filing. Houlens provides research material and does not give legal advice. Use requires a Houlens account with an active Houlens contract.",
         "developerName": "Normantics Inc.",
         "logo": "./assets/logo.png",
         "composerIcon": "./assets/logo.png",
         "category": "Productivity",
         "capabilities": [
-          "Search case law",
-          "Read decisions",
-          "Verify case citations",
-          "Look up statutes",
-          "Compare statute revisions"
+          "判例を探す",
+          "判決を読む",
+          "引用された事件番号を確かめる",
+          "条文を引く",
+          "条文の改正前後を比べる"
         ],
         "websiteURL": "https://houlens.jp",
         "supportURL": "https://houlens.jp/company/contact",
