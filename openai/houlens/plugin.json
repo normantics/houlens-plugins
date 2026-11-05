@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "houlens",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Search Japanese case law and statutes in Houlens and answer with the court, date, and case number of each cited decision.",
   "author": {
     "name": "Normantics Inc.",
@@ -52,43 +52,31 @@
             {
               "description": "Find decisions by meaning from a consultation written in Japanese",
               "prompt": "フリーランスへの業務委託を途中で打ち切ったときの損害賠償について、関連する判例を探して、出典を示して",
-              "tools_triggered": [
-                "search_cases"
-              ],
+              "tools_triggered": "search_cases",
               "expected_behavior": "Returns related decisions, each with the court, date of decision, case number, and Houlens case ID, summarizes the holdings from the decision text, and advises checking the original PDF before quoting it because the text is machine-extracted."
             },
             {
               "description": "Verify a cited decision by case number and read the relevant passage",
               "prompt": "最高裁判所第一小法廷平成4年2月27日判決 (平成1(オ)1668) が収録されているか確かめて、判決文で民法424条に触れている箇所を見せて",
-              "tools_triggered": [
-                "lookup_case_citation",
-                "find_in_case",
-                "read_case_text"
-              ],
+              "tools_triggered": "lookup_case_citation, find_in_case, read_case_text",
               "expected_behavior": "Matches the citation to Houlens case ID 052444 with its court, date, and case number, shows the passage that cites Civil Code Article 424 with its PDF page, and advises checking the original PDF before quoting it."
             },
             {
               "description": "Look up a statute article by its abbreviation",
               "prompt": "労基法20条の解雇予告の条文を見せて",
-              "tools_triggered": [
-                "get_statute"
-              ],
+              "tools_triggered": "get_statute",
               "expected_behavior": "Resolves the abbreviation to the Labor Standards Act and returns the text of Article 20 with paragraph numbers and the version in force."
             },
             {
               "description": "Compare a statute article before and after an amendment",
               "prompt": "労働基準法115条を、2020年4月1日に施行された改正の前後で比べて",
-              "tools_triggered": [
-                "compare_statute_revisions"
-              ],
+              "tools_triggered": "compare_statute_revisions",
               "expected_behavior": "Returns the text of the article before and after the amendment, the lines that changed, and the date the change took effect. If transitional rules matter, it notes that they are in the supplementary provisions, which the comparison does not include."
             },
             {
               "description": "Report the coverage of the case law collection",
               "prompt": "法レンズに収録されている判例の件数と範囲を教えて",
-              "tools_triggered": [
-                "get_coverage"
-              ],
+              "tools_triggered": "get_coverage",
               "expected_behavior": "Returns the total number of decisions in the collection with its breakdown by court and the range of decision dates, and explains that a search with no results does not prove that no decision exists."
             }
           ],
